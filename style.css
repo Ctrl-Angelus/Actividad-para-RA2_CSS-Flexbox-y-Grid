@@ -1,0 +1,3 @@
+/* Resetear estilos por defecto del navegador para mejor consistencia en los estilos */
+
+@import url("https://unpkg.com/@csstools/normalize.css");
