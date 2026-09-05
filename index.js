@@ -1,18 +1,19 @@
+
 const aside_button = document.getElementById("aside-toggle")
 const page = document.getElementById("page")
 
-aside_button.addEventListener("click", () => {
-    const isCollapsed = page.classList.toggle("aside-collapsed");
+document.addEventListener("DOMContentLoaded", () => {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches
 
-    aside_button.setAttribute(
-        "aria-expanded",
-        String(!isCollapsed)
-    );
+    if (!isMobile) page.classList.toggle("aside-open")
 
+    aside_button.setAttribute("aria-expanded", String(!isMobile));
     aside_button.setAttribute(
         "aria-label",
-        isCollapsed
-            ? "Expandir menú"
-            : "Contraer menú"
+        isMobile ? "Expandir menú" : "Contraer menú"
     );
+})
+
+aside_button.addEventListener("click", () => {
+    page.classList.toggle("aside-open")
 })
