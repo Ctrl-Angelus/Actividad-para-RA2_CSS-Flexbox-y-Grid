@@ -1,3 +1,67 @@
 /* Resetear estilos por defecto del navegador para mejor consistencia en los estilos */
 
 @import url("https://unpkg.com/@csstools/normalize.css");
+
+/* Estilos provisionales para maquetado */
+
+header {
+    background-color: cyan;
+}
+
+main {
+    background-color: darkcyan;
+}
+
+aside {
+    background-color: beige;
+}
+
+footer {
+    background-color: coral;
+}
+
+/* Estilos */
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#page {
+    --aside-width: 250px;
+
+    display: grid;
+    min-height: 100vh;
+
+    grid-template-columns: var(--aside-width) 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas:
+        "aside header"
+        "aside main"
+        "aside footer";
+
+    transition: grid-template-columns 0.3s ease;
+}
+
+#page.aside-collapsed {
+    --aside-width: 50px;
+}
+
+header {
+    grid-area: header;
+    min-height: 50px;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
+    min-height: 50px;
+}
