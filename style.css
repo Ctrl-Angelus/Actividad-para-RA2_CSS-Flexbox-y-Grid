@@ -16,10 +16,6 @@ article {
     background-color: white;
 }
 
-aside {
-    background-color: cadetblue;
-}
-
 footer {
     background-color: coral;
 }
@@ -46,6 +42,18 @@ body {
     transition: grid-template-columns 0.3s ease;
 }
 
+#page.aside-open {
+    & header button #aside-toggle-icon-expand {
+        display: none
+    }
+}
+
+#page:not(.aside-open) {
+    & header button #aside-toggle-icon-collapse {
+        display: none
+    }
+}
+
 header {
     position: sticky;
     top: 0;
@@ -68,37 +76,51 @@ header {
             background-color: white;
             padding: 3px;
             border-radius: 8px;
-            margin-right: 10px;
         }
     }
 }
 
-#page.aside-open {
-    & header button #aside-toggle-icon-expand {
-        display: none
-    }
-}
+header nav {
+    display: flex;
+    width: 100%;
 
-#page:not(.aside-open) {
-    & header button #aside-toggle-icon-collapse {
-        display: none
+    & a {
+        padding: 10px;
+        margin-inline: 5px;
+        transition: all .3s ease;
+    }
+
+    & a:hover {
+        background-color: red;
+        color: white;
+    }
+
+    & a:nth-last-child(2) {
+        margin-left: auto;
     }
 }
 
 main {
     grid-area: main;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
 aside {
     grid-area: aside;
-    padding: 10px;
+    padding: 5px;
     transition: all 0.3s ease;
     box-sizing: border-box;
 
     & nav {
+        position: relative;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         min-height: 100%;
+        padding: 10px;
+        background-color: #242525;
+        border-radius: 10px
     }
 }
 
@@ -126,11 +148,16 @@ aside button {
         font-size: 1rem;
         color: black;
         text-wrap: nowrap;
+        font-size: 1rem;
     }
 }
 
 aside button:nth-last-child(2) {
     margin-top: auto;
+}
+
+aside button:last-child {
+    margin-bottom: 0
 }
 
 aside button:hover {
@@ -153,7 +180,7 @@ footer {
 
 @media screen and (min-width: 769px) {
     #page {
-        --aside-width: 60px;
+        --aside-width: 65px;
         grid-template-columns: var(--aside-width) 1fr;
         grid-template-rows: auto 1fr auto;
 
@@ -174,24 +201,25 @@ footer {
     }
 
     #page.aside-open {
-        --aside-width: 250px;
+        --aside-width: 260px;
     }
 
     #page:not(.aside-open) {
         & aside {
-            padding: 12px;
+            padding: 5px;
         }
 
         & aside nav {
-            padding: 0;
-            margin: 0 auto;
+            padding: 10px;
 
             & button {
                 background-color: transparent;
                 padding: 0;
+                margin-inline: 0;
 
                 & span {
                     display: none;
+                    visibility: hidden;
                 }
 
                 & i {
@@ -201,6 +229,7 @@ footer {
 
                 & i:hover {
                     background-color: blue;
+                    color: white;
                 }
             }
         }
