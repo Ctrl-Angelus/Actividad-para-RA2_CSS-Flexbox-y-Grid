@@ -73,6 +73,18 @@ header {
     }
 }
 
+#page.aside-open {
+    & header button #aside-toggle-icon-expand {
+        display: none
+    }
+}
+
+#page:not(.aside-open) {
+    & header button #aside-toggle-icon-collapse {
+        display: none
+    }
+}
+
 main {
     grid-area: main;
 }
@@ -163,17 +175,9 @@ footer {
 
     #page.aside-open {
         --aside-width: 250px;
-
-        & header button #aside-toggle-icon-expand {
-            display: none
-        }
     }
 
     #page:not(.aside-open) {
-        & header button #aside-toggle-icon-collapse {
-            display: none
-        }
-
         & aside {
             padding: 12px;
         }
@@ -216,11 +220,11 @@ footer {
 
     #page aside {
         position: fixed;
-        top: 50px;
+        top: 60px;
         left: 0;
 
         width: 280px;
-        height: calc(100vh - 50px);
+        height: calc(100vh - 60px);
 
         transform: translateX(-100%);
 
