@@ -12,7 +12,7 @@
 
 <body>
     <div id="page">
-        <header>
+        <header id="header">
             <button aria-label="Expandir menú" aria-expanded="false" id="aside-toggle" type="button">
                 <i class="ti ti-layout-sidebar-left-expand" id="aside-toggle-icon-expand"></i>
                 <i class="ti ti-layout-sidebar-left-collapse" id="aside-toggle-icon-collapse"></i>
@@ -31,9 +31,37 @@
                 </a>
             </nav>
         </header>
+        <aside id="sidebar">
+            <nav>
+                <button title="Sección de resumen general" data-section="summary" aria-current="page">
+                    <i class="ti ti-chart-histogram"></i>
+                    <span>Resumen general</span>
+                </button>
+                <button title="Sección de productos y ventas" data-section="products">
+                    <i class="ti ti-package"></i>
+                    <span>Productos y ventas</span>
+                </button>
+                <button title="Sección de clientes y ubicaciones" data-section="clients">
+                    <i class="ti ti-map-pin"></i>
+                    <span>Clientes y ubicaciones</span>
+                </button>
+                <button title="Sección de notificaciones" id="notification-button">
+                    <i class="ti ti-bell"></i>
+                    <span>Notificaciones</span>
+                </button>
+                <button title="Sección de usuario" id="user-button">
+                    <i class="ti ti-user-circle"></i>
+                    <span>Usuario Administrador</span>
+                </button>
+            </nav>
+        </aside>
         <main>
-            <h1>Hello world!</h1>
-            <article>
+            <section id="summary">
+                <header>
+                    <h1>Resumen de la empresa</h1>
+                    <p>Información general sobre el rendimiento de mercado de ByteMarket desde el mes de Marzo al mes de
+                        Agosto</p>
+                </header>
                 <figure>
                     <iframe title="Tendencia Mensual" aria-label="Small multiple column chart"
                         id="datawrapper-chart-ZdtSO" src="https://datawrapper.dwcdn.net/ZdtSO/1/" scrolling="no"
@@ -53,33 +81,27 @@
                         type="text/javascript">(function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();</script>
                     <figcaption>Ganancias/pérdidas mensuales entre Marzo y Agosto</figcaption>
                 </figure>
-            </article>
+            </section>
+            <section id="products" hidden>
+                <header>
+                    <h1>Productos y ventas de la empresa</h1>
+                    <p>Información general sobre el rendimiento de mercado de ByteMarket desde el mes de Marzo al mes de
+                        Agosto</p>
+                </header>
+            </section>
+            <section id="clients" hidden>
+                <header>
+                    <h1>Clientes y ubicaciones</h1>
+                    <p>Información general sobre el rendimiento de mercado de ByteMarket desde el mes de Marzo al mes de
+                        Agosto</p>
+                </header>
+            </section>
         </main>
-        <aside id="sidebar">
-            <nav>
-                <button title="Sección de resumen general">
-                    <i class="ti ti-chart-histogram"></i>
-                    <span>Resumen general</span>
-                </button>
-                <button href="" title="Sección de productos y ventas">
-                    <i class="ti ti-package"></i>
-                    <span>Productos y ventas</span>
-                </button>
-                <button href="" title="Sección de clientes y ubicaciones">
-                    <i class="ti ti-map-pin"></i>
-                    <span>Clientes y ubicaciones</span>
-                </button>
-                <button href="" title="Sección de notificaciones">
-                    <i class="ti ti-bell"></i>
-                    <span>Notificaciones</span>
-                </button>
-                <button href="" title="Sección de usuario">
-                    <i class="ti ti-user-circle"></i>
-                    <span>Usuario Administrador</span>
-                </button>
-            </nav>
-        </aside>
-        <footer></footer>
+        <footer>
+            <p>Proyecto académico: Dashboard administrativo</p>
+            <p> © 2026 Miguel Ortiz </p>
+            <a href="#">Repositorio</a>
+        </footer>
     </div>
     <script src="./index.js"></script>
 </body>

@@ -4,7 +4,7 @@
 
 /* Estilos provisionales para maquetado */
 
-header {
+#header {
     background-color: cyan;
 }
 
@@ -12,7 +12,7 @@ main {
     background-color: darkcyan;
 }
 
-article {
+section {
     background-color: white;
 }
 
@@ -43,25 +43,26 @@ body {
 }
 
 #page.aside-open {
-    & header button #aside-toggle-icon-expand {
+    & #header button #aside-toggle-icon-expand {
         display: none
     }
 }
 
 #page:not(.aside-open) {
-    & header button #aside-toggle-icon-collapse {
+    & #header button #aside-toggle-icon-collapse {
         display: none
     }
 }
 
-header {
+#header {
     position: sticky;
     top: 0;
     z-index: 300;
     grid-area: header;
-    min-height: 60px;
+    min-height: 65px;
     display: flex;
     align-items: center;
+    padding-inline: 5px;
 
     & button {
         display: flex;
@@ -72,22 +73,33 @@ header {
         background: none;
 
         & i {
-            font-size: 30px;
+            font-size: 25px;
             background-color: white;
-            padding: 3px;
+            padding: 5px;
             border-radius: 8px;
         }
     }
 }
 
-header nav {
+#header nav {
     display: flex;
     width: 100%;
 
     & a {
+        display: flex;
+        align-items: center;
         padding: 10px;
         margin-inline: 5px;
         transition: all .3s ease;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1rem;
+        color: black;
+
+        & i {
+            font-size: 20px;
+            margin-right: 5px;
+        }
     }
 
     & a:hover {
@@ -119,7 +131,7 @@ aside {
         flex-direction: column;
         min-height: 100%;
         padding: 10px;
-        background-color: #242525;
+        background-color: #2c2c2c;
         border-radius: 10px
     }
 }
@@ -133,23 +145,28 @@ aside button {
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    background-color: darkgray;
+    background-color: #444444;
     transition: all .3s ease;
 
     & i {
-        font-size: 30px;
-        background-color: white;
-        padding: 3px;
+        font-size: 25px;
+        color: #242525;
+        padding: 5px;
         border-radius: 8px;
         margin-right: 10px;
+        background-color: #e2e2e2;
     }
 
     & span {
         font-size: 1rem;
-        color: black;
+        color: #e2e2e2;
         text-wrap: nowrap;
         font-size: 1rem;
     }
+}
+
+aside button[aria-current="page"] {
+    background-color: blueviolet;
 }
 
 aside button:nth-last-child(2) {
@@ -161,11 +178,7 @@ aside button:last-child {
 }
 
 aside button:hover {
-    background-color: white;
-}
-
-article {
-    display: flex;
+    background-color: #5b5b5b;
 }
 
 figure {
@@ -175,7 +188,37 @@ figure {
 
 footer {
     grid-area: footer;
-    min-height: 50px;
+    max-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & * {
+        margin-inline: 10px;
+        text-align: center;
+    }
+}
+
+
+/* Secciones de la información del dashboard */
+main section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section header {
+    background-color: cadetblue;
+    padding: 15px;
+    border-radius: 10px;
+    flex-basis: 100%;
+
+    & h1 {
+        margin: 0;
+    }
+}
+
+main section[hidden] {
+    display: none;
 }
 
 @media screen and (min-width: 769px) {
@@ -232,6 +275,11 @@ footer {
                     color: white;
                 }
             }
+
+            & button[aria-current=page] i {
+                background-color: blueviolet;
+                color: white;
+            }
         }
     }
 }
@@ -249,11 +297,11 @@ footer {
 
     #page aside {
         position: fixed;
-        top: 60px;
+        top: 65px;
         left: 0;
 
         width: 280px;
-        height: calc(100vh - 60px);
+        height: calc(100vh - 65px);
 
         transform: translateX(-100%);
 
