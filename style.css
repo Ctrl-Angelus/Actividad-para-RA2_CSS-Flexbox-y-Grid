@@ -12,8 +12,12 @@ main {
     background-color: darkcyan;
 }
 
+article {
+    background-color: white;
+}
+
 aside {
-    background-color: beige;
+    background-color: cadetblue;
 }
 
 footer {
@@ -21,10 +25,19 @@ footer {
 }
 
 /* Estilos */
+@font-face {
+    font-family: Inter;
+    src: url(assets/Inter.ttf);
+}
+
+:root {
+    color-scheme: light;
+}
 
 body {
     padding: 0;
     margin: 0;
+    font-family: Inter
 }
 
 #page {
@@ -38,7 +51,26 @@ header {
     top: 0;
     z-index: 300;
     grid-area: header;
-    min-height: 50px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+
+    & button {
+        display: flex;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        transition: all .3s ease;
+        background: none;
+
+        & i {
+            font-size: 30px;
+            background-color: white;
+            padding: 3px;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+    }
 }
 
 main {
@@ -47,6 +79,59 @@ main {
 
 aside {
     grid-area: aside;
+    padding: 10px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+
+    & nav {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+    }
+}
+
+aside button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    padding-right: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: darkgray;
+    transition: all .3s ease;
+
+    & i {
+        font-size: 30px;
+        background-color: white;
+        padding: 3px;
+        border-radius: 8px;
+        margin-right: 10px;
+    }
+
+    & span {
+        font-size: 1rem;
+        color: black;
+        text-wrap: nowrap;
+    }
+}
+
+aside button:nth-last-child(2) {
+    margin-top: auto;
+}
+
+aside button:hover {
+    background-color: white;
+}
+
+article {
+    display: flex;
+}
+
+figure {
+    max-width: 500px;
+    padding: 10px;
 }
 
 footer {
@@ -56,7 +141,7 @@ footer {
 
 @media screen and (min-width: 769px) {
     #page {
-        --aside-width: 50px;
+        --aside-width: 60px;
         grid-template-columns: var(--aside-width) 1fr;
         grid-template-rows: auto 1fr auto;
 
@@ -67,16 +152,54 @@ footer {
 
     }
 
-    #page.aside-open {
-        --aside-width: 250px;
-    }
-
-    aside {
+    #page aside {
         position: sticky;
         top: 0;
         align-self: start;
         height: 100vh;
         overflow-y: auto;
+        overflow-x: hidden
+    }
+
+    #page.aside-open {
+        --aside-width: 250px;
+
+        & header button #aside-toggle-icon-expand {
+            display: none
+        }
+    }
+
+    #page:not(.aside-open) {
+        & header button #aside-toggle-icon-collapse {
+            display: none
+        }
+
+        & aside {
+            padding: 12px;
+        }
+
+        & aside nav {
+            padding: 0;
+            margin: 0 auto;
+
+            & button {
+                background-color: transparent;
+                padding: 0;
+
+                & span {
+                    display: none;
+                }
+
+                & i {
+                    margin: 0;
+                    transition: all .3s ease;
+                }
+
+                & i:hover {
+                    background-color: blue;
+                }
+            }
+        }
     }
 }
 
@@ -93,11 +216,11 @@ footer {
 
     #page aside {
         position: fixed;
-        top: 0;
+        top: 50px;
         left: 0;
 
         width: 280px;
-        height: 100vh;
+        height: calc(100vh - 50px);
 
         transform: translateX(-100%);
 

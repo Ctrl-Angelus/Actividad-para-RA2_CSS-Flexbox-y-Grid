@@ -7,21 +7,63 @@
     <title>Dashboard Administrativo - Sistema de gestión</title>
 
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 </head>
 
 <body>
     <div id="page">
         <header>
-            <button aria-label="Expandir menú" aria-expanded="false" id="aside-toggle" type="button">☰</button>
+            <button aria-label="Expandir menú" aria-expanded="false" id="aside-toggle" type="button">
+                <i class="ti ti-layout-sidebar-left-expand" id="aside-toggle-icon-expand"></i>
+                <i class="ti ti-layout-sidebar-left-collapse" id="aside-toggle-icon-collapse"></i>
+            </button>
         </header>
         <main>
             <h1>Hello world!</h1>
+            <article>
+                <figure>
+                    <iframe title="Tendencia Mensual" aria-label="Small multiple column chart"
+                        id="datawrapper-chart-ZdtSO" src="https://datawrapper.dwcdn.net/ZdtSO/1/" scrolling="no"
+                        frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="419"
+                        data-external="1"></iframe>
+                    <script
+                        type="text/javascript">(function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();</script>
+                    <figcaption>Ingresos brutos mensuales entre Marzo y Agosto</figcaption>
+                </figure>
+
+                <figure>
+                    <iframe title="Ganancias/pérdidas mensuales" aria-label="Small multiple column chart"
+                        id="datawrapper-chart-0zj3I" src="https://datawrapper.dwcdn.net/0zj3I/1/" scrolling="no"
+                        frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="674"
+                        data-external="1"></iframe>
+                    <script
+                        type="text/javascript">(function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();</script>
+                    <figcaption>Ganancias/pérdidas mensuales entre Marzo y Agosto</figcaption>
+                </figure>
+            </article>
         </main>
         <aside id="sidebar">
             <nav>
-                <a href="">1</a>
-                <a href="">1</a>
-                <a href="">1</a>
+                <button title="Sección de resumen general">
+                    <i class="ti ti-chart-histogram"></i>
+                    <span>Resumen general</span>
+                </button>
+                <button href="" title="Sección de productos y ventas">
+                    <i class="ti ti-package"></i>
+                    <span>Productos y ventas</span>
+                </button>
+                <button href="" title="Sección de clientes y ubicaciones">
+                    <i class="ti ti-map-pin"></i>
+                    <span>Clientes y ubicaciones</span>
+                </button>
+                <button href="" title="Sección de notificaciones">
+                    <i class="ti ti-settings"></i>
+                    <span>Notificaciones</span>
+                </button>
+                <button href="" title="Sección de usuario">
+                    <i class="ti ti-user-circle"></i>
+                    <span>Usuario Administrador</span>
+                </button>
             </nav>
         </aside>
         <footer></footer>
