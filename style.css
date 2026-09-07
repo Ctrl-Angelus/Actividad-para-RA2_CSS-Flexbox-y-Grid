@@ -5,19 +5,11 @@
 /* Estilos provisionales para maquetado */
 
 #header {
-    background-color: cyan;
-}
-
-main {
-    background-color: darkcyan;
-}
-
-section {
-    background-color: white;
+    background-color: slategray;
 }
 
 footer {
-    background-color: coral;
+    background-color: lightskyblue;
 }
 
 /* Estilos */
@@ -33,7 +25,8 @@ footer {
 body {
     padding: 0;
     margin: 0;
-    font-family: Inter
+    font-family: Inter;
+    box-sizing: border-box;
 }
 
 #page {
@@ -63,6 +56,11 @@ body {
     display: flex;
     align-items: center;
     padding-inline: 5px;
+    border-radius: 0 0 15px 15px;
+    border: 5px solid white;
+    border-top: none;
+    border-bottom: none;
+    box-sizing: border-box;
 
     & button {
         display: flex;
@@ -182,8 +180,35 @@ aside button:hover {
 }
 
 figure {
-    max-width: 500px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 600px;
+
+    margin: 10px;
     padding: 10px;
+
+    border-radius: 10px;
+    border: 2px solid cornflowerblue;
+    overflow-x: scroll;
+
+    display: flex;
+
+    & figcaption {
+        margin-top: auto;
+    }
+}
+
+figure iframe {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 50px;
+
+    border: 0;
 }
 
 footer {
@@ -192,10 +217,16 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-inline: 10px;
+    border-radius: 20px 20px 0 0;
+    border: 10px solid white;
+    border-bottom: none;
+
 
     & * {
         margin-inline: 10px;
-        text-align: center;
+        /* text-align: center; */
+        font-size: 0.6rem
     }
 }
 
@@ -204,17 +235,59 @@ footer {
 main section {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 section header {
     background-color: cadetblue;
-    padding: 15px;
+    padding: 30px;
     border-radius: 10px;
     flex-basis: 100%;
 
     & h1 {
         margin: 0;
     }
+}
+
+/* Cartas de información */
+.card-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+    flex-basis: 30%;
+    flex-wrap: wrap;
+
+    & .card {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        background-color: cornflowerblue;
+        min-width: 200px;
+        max-height: 280px;
+        border-radius: 10px;
+        padding: 20px;
+        text-wrap: wrap;
+        position: relative;
+
+        & span {
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 1.3rem;
+            margin-right: 50px;
+        }
+
+        & i {
+            position: absolute;
+            top: calc(100% - 55px);
+            right: 10px;
+            padding: 10px;
+            font-size: 25px;
+            background-color: white;
+            border-radius: 10px;
+        }
+    }
+
 }
 
 main section[hidden] {
@@ -231,6 +304,14 @@ main section[hidden] {
             "aside header"
             "aside main"
             "aside footer";
+
+        & .card-container .card {
+            flex: 1 1 calc(50% - 8px);
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-basis: 50%
+        }
 
     }
 
@@ -293,6 +374,14 @@ main section[hidden] {
             "header"
             "main"
             "footer";
+
+        & .card-container {
+            flex-basis: 50%;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex: 1 1 calc(50% - 8px);
+        }
     }
 
     #page aside {
