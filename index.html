@@ -14,10 +14,10 @@
     <div id="page">
         <header id="header">
             <button aria-label="Expandir menú" aria-expanded="false" id="aside-toggle" type="button">
-                <i class="ti ti-layout-sidebar-left-expand" id="aside-toggle-icon-expand"></i>
-                <i class="ti ti-layout-sidebar-left-collapse" id="aside-toggle-icon-collapse"></i>
+                <i class="ti ti-layout-sidebar-left-expand" id="aside-toggle-icon-expand" aria-hidden="true"></i>
+                <i class="ti ti-layout-sidebar-left-collapse" id="aside-toggle-icon-collapse" aria-hidden="true"></i>
             </button>
-            <nav>
+            <nav aria-label="Navegación principal superior">
                 <a href="#" id="brand">
                     ByteMarket Dashboard
                 </a>
@@ -26,35 +26,37 @@
                     README
                 </a>
                 <a href="https://github.com/Ctrl-Angelus/Actividad-para-RA2_CSS-Flexbox-y-Grid" target="_blank">
-                    <i class="ti ti-brand-github"></i>
+                    <i class="ti ti-brand-github" aria-hidden="true"></i>
                     Github
                 </a>
             </nav>
         </header>
-        <aside id="sidebar">
+
+        <aside id="sidebar" aria-label="Menú lateral de navegación">
             <nav>
                 <button title="Sección de resumen general" data-section="summary" aria-current="page">
-                    <i class="ti ti-chart-histogram"></i>
+                    <i class="ti ti-chart-histogram" aria-hidden="true"></i>
                     <span>Resumen general</span>
                 </button>
                 <button title="Sección de productos y ventas" data-section="products">
-                    <i class="ti ti-package"></i>
+                    <i class="ti ti-package" aria-hidden="true"></i>
                     <span>Productos y ventas</span>
                 </button>
                 <button title="Sección de clientes y ubicaciones" data-section="clients">
-                    <i class="ti ti-map-pin"></i>
+                    <i class="ti ti-map-pin" aria-hidden="true"></i>
                     <span>Clientes y ubicaciones</span>
                 </button>
                 <button title="Sección de notificaciones" id="notification-button">
-                    <i class="ti ti-bell"></i>
+                    <i class="ti ti-bell" aria-hidden="true"></i>
                     <span>Notificaciones</span>
                 </button>
                 <button title="Sección de usuario" id="user-button">
-                    <i class="ti ti-user-circle"></i>
+                    <i class="ti ti-user-circle" aria-hidden="true"></i>
                     <span>Usuario Administrador</span>
                 </button>
             </nav>
         </aside>
+
         <main>
             <section id="summary">
                 <header>
@@ -66,46 +68,49 @@
                 </header>
                 <div class="card-container">
                     <div class="card">
-                        <i class="ti ti-receipt"></i>
+                        <i class="ti ti-receipt" aria-hidden="true"></i>
                         Ingresos brutos totales
                         <span>$73,704 Dólares</span>
                     </div>
                     <div class="card">
-                        <i class="ti ti-report-money"></i>
+                        <i class="ti ti-report-money" aria-hidden="true"></i>
                         Ganancia Neta
                         <span>$16,350 Dólares</span>
                     </div>
                     <div class="card">
-                        <i class="ti ti-shopping-cart"></i>
+                        <i class="ti ti-shopping-cart" aria-hidden="true"></i>
                         Pedidos realizados
                         <span>180 Pedidos</span>
                     </div>
                     <div class="card">
-                        <i class="ti ti-thumb-down"></i>
+                        <i class="ti ti-thumb-down" aria-hidden="true"></i>
                         Pedidos devueltos
                         <span>11 Pedidos</span>
                     </div>
                 </div>
                 <figure>
                     <iframe title="Tendencia Mensual" aria-label="Small multiple column chart"
-                        id="datawrapper-chart-ZdtSO" src="https://datawrapper.dwcdn.net/ZdtSO/1/" scrolling="no"
-                        frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="419"
+                        id="datawrapper-chart-ZdtSO" src="https://datawrapper.dwcdn.net/ZdtSO/1/"
+                        style="width: 0; min-width: 100% !important; border: none; overflow: hidden;" height="419"
                         data-external="1"></iframe>
-                    <script
-                        type="text/javascript">(function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();</script>
+                    <script>
+                        (function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();
+                    </script>
                     <figcaption>Ingresos brutos mensuales entre Marzo y Agosto</figcaption>
                 </figure>
 
                 <figure>
                     <iframe title="Ganancias/pérdidas mensuales" aria-label="Small multiple column chart"
-                        id="datawrapper-chart-0zj3I" src="https://datawrapper.dwcdn.net/0zj3I/1/" scrolling="no"
-                        frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="674"
+                        id="datawrapper-chart-0zj3I" src="https://datawrapper.dwcdn.net/0zj3I/1/"
+                        style="width: 0; min-width: 100% !important; border: none; overflow: hidden;" height="674"
                         data-external="1"></iframe>
-                    <script
-                        type="text/javascript">(function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();</script>
+                    <script>
+                        (function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();
+                    </script>
                     <figcaption>Ganancias/pérdidas mensuales entre Marzo y Agosto</figcaption>
                 </figure>
             </section>
+
             <section id="products" hidden>
                 <header>
                     <h1>Productos y ventas de la empresa</h1>
@@ -113,32 +118,36 @@
                 </header>
                 <figure class="table">
                     <iframe title="Productos con mayores ingresos" aria-label="Table" id="datawrapper-chart-64Wkp"
-                        src="https://datawrapper.dwcdn.net/64Wkp/1/" scrolling="no" frameborder="0"
-                        style="width: 0; min-width: 100% !important; border: none;" height="307"
+                        src="https://datawrapper.dwcdn.net/64Wkp/1/"
+                        style="width: 0; min-width: 100% !important; border: none; overflow: hidden;" height="307"
                         data-external="1"></iframe>
-                    <script
-                        type="text/javascript">(function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();</script>
+                    <script>
+                        (function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();
+                    </script>
                     <figcaption>Tabla de productos con mayores ingresos</figcaption>
                 </figure>
                 <figure class="table">
                     <iframe title="Categorías más importantes" aria-label="Table" id="datawrapper-chart-53Pnx"
-                        src="https://datawrapper.dwcdn.net/53Pnx/1/" scrolling="no" frameborder="0"
-                        style="width: 0; min-width: 100% !important; border: none;" height="344"
+                        src="https://datawrapper.dwcdn.net/53Pnx/1/"
+                        style="width: 0; min-width: 100% !important; border: none; overflow: hidden;" height="344"
                         data-external="1"></iframe>
-                    <script
-                        type="text/javascript">(function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();</script>
+                    <script>
+                        (function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();
+                    </script>
                     <figcaption>Tabla de categorías más importantes</figcaption>
                 </figure>
                 <figure>
                     <iframe title="Lista de productos" aria-label="Table" id="datawrapper-chart-WFAky"
-                        src="https://datawrapper.dwcdn.net/WFAky/1/" scrolling="no" frameborder="0"
-                        style="width: 0; min-width: 100% !important; border: none;" height="649"
+                        src="https://datawrapper.dwcdn.net/WFAky/1/"
+                        style="width: 0; min-width: 100% !important; border: none; overflow: hidden;" height="649"
                         data-external="1"></iframe>
-                    <script
-                        type="text/javascript">(function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();</script>
+                    <script>
+                        (function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();
+                    </script>
                     <figcaption>Tabla de todos los productos</figcaption>
                 </figure>
             </section>
+
             <section id="clients" hidden>
                 <header>
                     <h1>Clientes y ubicaciones</h1>
@@ -146,24 +155,27 @@
                 </header>
                 <figure>
                     <iframe title="Pedidos e ingresos por ciudad" aria-label="Table" id="datawrapper-chart-GE3j8"
-                        src="https://datawrapper.dwcdn.net/GE3j8/1/" scrolling="no" frameborder="0"
-                        style="width: 0; min-width: 100% !important; border: none;" height="437"
+                        src="https://datawrapper.dwcdn.net/GE3j8/1/"
+                        style="width: 0; min-width: 100% !important; border: none; overflow: hidden;" height="437"
                         data-external="1"></iframe>
-                    <script
-                        type="text/javascript">(function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();</script>
+                    <script>
+                        (function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();
+                    </script>
                     <figcaption>Tabla de pedidos e ingresos por ciudad</figcaption>
                 </figure>
                 <figure>
                     <iframe title="Lista de clientes" aria-label="Table" id="datawrapper-chart-zAd8c"
-                        src="https://datawrapper.dwcdn.net/zAd8c/1/" scrolling="no" frameborder="0"
-                        style="width: 0; min-width: 100% !important; border: none;" height="1254"
+                        src="https://datawrapper.dwcdn.net/zAd8c/1/"
+                        style="width: 0; min-width: 100% !important; border: none; overflow: hidden;" height="1254"
                         data-external="1"></iframe>
-                    <script
-                        type="text/javascript">(function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();</script>
+                    <script>
+                        (function () {function e() {window.addEventListener(`message`, function (e) {if (e.data[`datawrapper-height`] !== void 0) {var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) {var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a} } })} e()})();
+                    </script>
                     <figcaption>Lista de clientes</figcaption>
                 </figure>
             </section>
         </main>
+
         <footer>
             <p>Proyecto académico: Dashboard administrativo</p>
             <p> © 2026 Miguel Ortiz </p>
