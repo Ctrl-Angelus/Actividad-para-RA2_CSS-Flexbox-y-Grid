@@ -42,7 +42,7 @@
     /* Color de acento verde azulado */
     --color-secondary: #5f9d9f;
     --color-secondary-hover: #4c8587;
-    --color-secondary-light: #dceced;
+    --color-secondary-light: #b7e8dc;
 
     /* Color de acento verde pálido */
     --color-green: #7fbf9b;
@@ -153,9 +153,7 @@ body {
 
     background: none;
 
-    transition:
-        background-color var(--transition-fast),
-        color var(--transition-fast);
+    transition: all .3s ease;
 }
 
 
@@ -169,13 +167,14 @@ body {
     background-color: var(--color-surface-secondary);
 
     border-radius: var(--radius-sm);
+    transition: all .3s ease;
 }
 
 
 #header button:hover i {
-    color: var(--color-surface);
+    color: var(--color-secondary-hover);
 
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary-light);
 }
 
 
@@ -319,12 +318,6 @@ aside button span {
     white-space: nowrap;
 }
 
-
-aside button:hover {
-    background-color: var(--color-sidebar-hover);
-}
-
-
 /* Botón de la sección actual */
 
 aside button[aria-current="page"] {
@@ -337,6 +330,22 @@ aside button[aria-current="page"] i {
 
     background-color: var(--color-surface);
 }
+
+aside button:hover {
+    background-color: var(--color-secondary-light);
+
+    & span {
+        color: var(--color-secondary-hover);
+    }
+
+    & i {
+        background-color: var(--color-surface);
+        color: var(--color-secondary-hover);
+
+    }
+}
+
+
 
 
 /* Botones inferiores */
@@ -531,9 +540,9 @@ section header h1 {
 
     font-size: 25px;
 
-    color: var(--color-primary-active);
+    color: var(--color-secondary-hover);
 
-    background-color: var(--color-primary-light);
+    background-color: var(--color-secondary-light);
 
     border-radius: var(--radius-md);
 }
