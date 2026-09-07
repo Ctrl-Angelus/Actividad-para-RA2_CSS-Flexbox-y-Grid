@@ -12,12 +12,12 @@
 
 <body>
     <div id="page">
-        <header id="header">
+        <header id="header" role="banner">
             <button aria-label="Expandir menú" aria-expanded="false" id="aside-toggle" type="button">
                 <i class="ti ti-layout-sidebar-left-expand" id="aside-toggle-icon-expand" aria-hidden="true"></i>
                 <i class="ti ti-layout-sidebar-left-collapse" id="aside-toggle-icon-collapse" aria-hidden="true"></i>
             </button>
-            <nav aria-label="Navegación principal superior">
+            <nav role="navigation" aria-label="Navegación principal superior">
                 <a href="#" id="brand">
                     ByteMarket Dashboard
                 </a>
@@ -32,7 +32,7 @@
             </nav>
         </header>
 
-        <aside id="sidebar" aria-label="Menú lateral de navegación">
+        <aside id="sidebar" role="navigation" aria-label="Menú lateral de navegación">
             <nav>
                 <button title="Sección de resumen general" data-section="summary" aria-current="page">
                     <i class="ti ti-chart-histogram" aria-hidden="true"></i>
@@ -57,7 +57,7 @@
             </nav>
         </aside>
 
-        <main>
+        <main role="main">
             <section id="summary">
                 <header>
                     <h1>Resumen de la empresa</h1>
@@ -176,7 +176,7 @@
             </section>
         </main>
 
-        <footer>
+        <footer role="contentinfo">
             <p>Proyecto académico: Dashboard administrativo</p>
             <p> © 2026 Miguel Ortiz </p>
             <a href="#">Repositorio</a>
