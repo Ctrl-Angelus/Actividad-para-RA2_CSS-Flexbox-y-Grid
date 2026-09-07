@@ -48,7 +48,7 @@ Captura de pantalla en tablet
 </p>
 Captura de pantalla en móvil
 <p align="center">
-  <img src="./assets/Captura-móvil.png" alt="Modo Móvil" width="100%">
+  <img src="./assets/Captura-móvil.jpeg" alt="Modo Móvil" width="100%">
 </p>
 
 
